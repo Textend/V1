@@ -1,0 +1,24 @@
+html{
+	height: 100%;
+	min-height: 100%;
+}
+
+body{
+	background-color: #151515;
+	padding:0;
+	margin:0;
+	min-height: 100%;
+}
+#wrapper{
+	background-color: #151515;
+	height: 100%;
+}
+#textpanel{
+	background-color: #e2e2e2;
+	margin: 10 200 10;
+	height: 100%;
+}
+
+#textpanel p{
+	text-align: center;
+}
