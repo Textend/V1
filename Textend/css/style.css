@@ -13,9 +13,14 @@ body{
 	background-color: #151515;
 	height: 100%;
 }
+#inputpanel{
+	background-color: #e3e3e3;
+	margin: 100px;
+	padding: 20px;
+}
 #textpanel{
 	background-color: #e2e2e2;
-	margin: 10 200 10;
+	margin: 50px;
 	height: 100%;
 }
 

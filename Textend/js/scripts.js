@@ -1,4 +1,5 @@
-document.getElementById('file').onchange = function(){
+
+var openText = function(){
 
   var file = this.files[0];
 
@@ -15,3 +16,14 @@ document.getElementById('file').onchange = function(){
   };
   reader.readAsText(file);
 };
+document.getElementById('file').onchange = openText;
+// document.getElementById('openfile').onclick = alert('click');
+
+$(function () {
+  $('#openfile').click(open);
+})
+
+function open(){
+  openText();
+  alert('open')
+}
