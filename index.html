@@ -2,24 +2,63 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Textend V0.0.1</title>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Textend V0.0.1</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bamboo.css">
 </head>
 
 <body>
-	<div id="wrapper">
-	<div id="inputpanel">
-		<button id="openfile">Open File</button>
-		<input type="file" name="file" id="file">
-	</div>
-		<div id="textpanel">
+    <div id="wrapper">
+        <nav id="main-nav" class="navigation overflow">
+            <ul>
+                <li><a href="#">Menu item</a>
+                </li>
+                <li><a href="#">Menu item 2</a>
+                </li>
+                <li><a href="#">Menu item 3</a>
+                </li>
+                <li><a href="#">Menu item 4</a>
+                </li>
+                <li><a href="#">Menu item 5</a>
+                </li>
+                <li><a href="#">Menu item 6</a>
+                </li>
+            </ul>
+        </nav>
 
-			<p id="textention"></p>
-		</div>
-	</div>
+
+        <div id="container">
+            <header class="primary">
+                <span class="open icon">&#9776;</span>
+                <hgroup>
+                    <h1>filename here</h1>
+                </hgroup>
+            </header>
+
+            <section id="scroller" class="overflow">
+                <div id="inputpanel">
+                    <button id="openfile">Open File</button>
+                    <input type="file" name="file" id="file">
+                </div>
+                <p id="textention"></p>
+            </section>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script src="js/bamboo.0.1.js"></script>
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/knockout-3.2.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+    var site = new Bamboo();
+    </script>
 </body>
-<script src="lib/jquery-2.1.1.min.js"></script>
-<script src="js/scripts.js"></script>
+
+
 </html>

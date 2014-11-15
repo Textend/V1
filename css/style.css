@@ -4,6 +4,8 @@ html{
 }
 
 body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2em;
 	background-color: #151515;
 	padding:0;
 	margin:0;
@@ -19,8 +21,8 @@ body{
 	padding: 20px;
 }
 #textpanel{
-	background-color: #e2e2e2;
-	margin: 50px;
+	color: #e2e2e2;
+	margin: 300px;
 	height: 100%;
 }
 
