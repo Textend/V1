@@ -31,7 +31,7 @@ body{
 	padding: 50px;
 }
 
-#textention{
+.textention{
 	color: #e2e2e2;
 	margin-right: 265px;
 	/*padding:50px;*/
@@ -43,19 +43,12 @@ body{
 	font-size: 1.25em;
 }
 
-#hide{
-	color: #e2e2e2;
-	display: none;
-}
-
-#show{
+.custom-menu {
 	z-index: 1000;
 	position: absolute;
 	background-color: #C0C0C0;
-	border: 1px solid blue;
+	border: 1px solid black;
 	padding: 2px;
-	display: block;
-	margin: 0;
 }
 
 #scroller{

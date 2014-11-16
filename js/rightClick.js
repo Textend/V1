@@ -8,24 +8,48 @@ function getSelectedText() {
   return text;
 }
 
-function showContextMenu() {
-  document.getElementById("rmenu").className = "show";
-  document.getElementById("rmenu").style.top = mouseY(event);
-  document.getElementById("rmenu").style.left = mouseX(event);
+function addToOutline() {
+  alert("Adding \"" + getSelectedText() + "\" to outline");
 }
 
-if (document.addEventListener) {
-  document.addEventListener('contextmenu', function(e) {
 
-    // alert(getSelectedText());
-    showContextMenu();
-    e.preventDefault();  
-  }, false);
-} else {
-  document.attachEvent('oncontextmenu', function(){
+var isMenuShowing = false;
 
-    // alert(getSelectedText());
-    showContextMenu();
-    window.event.returnValue = false;
-  })
-}
+$(document).bind("contextmenu", function(event) {
+  event.preventDefault();
+
+  if (!isMenuShowing) {
+    $("div.custom-menu").show();
+    isMenuShowing = true;
+  }
+
+  $("div.custom-menu").css({top: event.pageY + "px", left: event.pageX + "px"});
+});
+
+$(document).bind("click", function(event) {
+  $("div.custom-menu").hide();
+  isMenuShowing = false;
+});
+
+$(document).ready(function() {
+  $("div.custom-menu").hide();
+});
+
+$("#addToOutline").bind("click", function() {
+  addToOutline();
+});
+
+$(".textention").click(function(e) {
+  s = window.getSelection();
+  var range = s.getRangeAt(0);
+  var node = s.anchorNode;
+  while (range.toString().indexOf(' ') != 0) {
+    range.setStart(node, (range.startOffset - 1));
+  }
+  range.setStart(node, range.startOffset + 1);
+  do {
+    range.setEnd(node, range.endOffset + 1);
+  } while (range.toString().indexOf(' ') == -1 && range.toString().trim() != '' && range.endOffset < node.length);
+  var str = range.toString().trim();
+  alert(str);
+});
