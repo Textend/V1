@@ -28,8 +28,18 @@ body{
 
 #textpanel p{
 	text-align: center;
+	padding: 50px;
 }
 
 #textention{
 	color: #e2e2e2;
+	margin-right: 265px;
+	/*padding:50px;*/
+}
+#scroller{
+	padding: 75px;
+}
+input[type=file]{
+	line-height: 40px;
+	font-size: 18px; position: relative; font-weight: 100;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Textend V0.0.1</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -19,14 +19,20 @@
 <body>
     <div id="wrapper">
         <nav id="main-nav" class="navigation overflow">
+            <!-- <div class="btn-group-vertical" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">Open Document</button>
+                <button type="button" class="btn btn-default">Annotations</button>
+                <button type="button" class="btn btn-default">Right</button>
+            </div> -->
             <ul>
-                <li><a href="#">Menu item</a>
+                <li style="padding:5px;"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="width:100%">Open Document</a>
+                <!-- <input type="file" id="fileinput" /> -->
                 </li>
-                <li><a href="#">Menu item 2</a>
+                <li><a href="#">Annotations</a>
                 </li>
-                <li><a href="#">Menu item 3</a>
+                <li><a href="#">Settings</a>
                 </li>
-                <li><a href="#">Menu item 4</a>
+                <li><a href="#">Help </a>
                 </li>
                 <li><a href="#">Menu item 5</a>
                 </li>
@@ -82,11 +88,34 @@
                 </div>
             </section>
         </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Open Document</h4>
+      </div>
+      <div class="modal-body">
+        <a href="#">Moby Dick</a><br>
+        <a href="#">Fundamentals Of Fundamentals</a><br>
+        <a href="#">Books: A History</a><br>
+        <a href="#">Designing the user Interface</a><br>
+        <a href="#">Designing the user Face</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
     <script src="js/bamboo.0.1.js"></script>
     <script src="lib/jquery-2.1.1.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
     var site = new Bamboo();
