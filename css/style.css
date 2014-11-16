@@ -36,6 +36,28 @@ body{
 	margin-right: 265px;
 	/*padding:50px;*/
 }
+
+#title{
+	color: #e2e2e2;
+	font-weight: 800;
+	font-size: 1.25em;
+}
+
+#hide{
+	color: #e2e2e2;
+	display: none;
+}
+
+#show{
+	z-index: 1000;
+	position: absolute;
+	background-color: #C0C0C0;
+	border: 1px solid blue;
+	padding: 2px;
+	display: block;
+	margin: 0;
+}
+
 #scroller{
 	padding: 75px;
 }
