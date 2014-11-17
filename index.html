@@ -14,14 +14,15 @@
 
     <script src="lib/jquery-2.1.1.min.js"></script>
     <script src="js/rightClick.js"></script>
-
+    <script src="js/setTitle.js"></script>
     <script src="lib/knockout-3.2.0.js"></script>
     <script src="js/textFileModel.js"></script>
     <script>
     $(function() {
         console.log("ready!");
-        
+
         // var outlineText = "";
+        
 
         /* Document Opening And Closing */
         $("#outline").hide()
@@ -31,7 +32,7 @@
             if (isDocumentOpen) {
                 $("#openDocButton").hide();
                 $("#closeDocButton").show();
-            }else{
+            } else {
                 $("#openDocButton").show();
                 $("#closeDocButton").hide();
             }
@@ -54,11 +55,13 @@
             }
         }
 
-        var hideDocument = function(){
+        var hideDocument = function() {
             $("#doc").hide();
         }
-        var showDocument = function(){
-            if (isDocumentOpen) {$("#doc").show();}; 
+        var showDocument = function() {
+            if (isDocumentOpen) {
+                $("#doc").show();
+            };
         }
 
         /* Outline Fuctionz */
@@ -66,34 +69,34 @@
 
 
 
-        var showOutline = function (){
+        var showOutline = function() {
             console.log("show Outline")
             $("#outline").show();
         }
 
-        var hideOutline = function(){
+        var hideOutline = function() {
             console.log("hide Outline");
-            $("#outline").hide();   
+            $("#outline").hide();
         }
 
         /* Button Bindingz*/
-        $("#showText").bind("click", function(){
+        $("#showText").bind("click", function() {
             hideOutline();
             showDocument();
         });
-        $("a.docOpenerButton").bind("click", function (){
+        $("a.docOpenerButton").bind("click", function() {
             openDocument()
         });
 
-        $("#closeDocButton").bind("click", function (){
+        $("#closeDocButton").bind("click", function() {
             closeDocument()
         });
 
-        $("#showOutline").bind("click", function (){
+        $("#showOutline").bind("click", function() {
             console.log("show Outline clicked")
             hideDocument()
             showOutline()
-        });        
+        });
     });
     </script>
 </head>
@@ -104,21 +107,20 @@
             <ul>
                 <li style="padding:5px;">
                     <button id="openDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="width:100%">Open Document</a>
-                    <button id="closeDocButton" type="button" class="btn btn-default"  style="width:100%;display:none;">Close Document</a>
-                        <!-- <input type="file" id="fileinput" /> -->
+                        <button id="closeDocButton" type="button" class="btn btn-default" style="width:100%;display:none;">Close Document</a>
+                            <!-- <input type="file" id="fileinput" /> -->
                 </li>
-                <li><a href="#" id="showText">Text&nbsp;<span class="glyphicon glyphicon-book"></span></a>
+                <li><a href="#" id="showText"><span class="glyphicon glyphicon-book"></span>&nbsp;Text</a>
                 </li>
-                <li><a href="#">Annotations&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Annotations</a>
                 </li>
-                <li><a id="showOutline"href="#">Outline&nbsp;<span class="glyphicon glyphicon-th-list"></span></a>
+                <li><a id="showOutline" href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Outline</a>
                 </li>
                 <li>
-                    <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif;">Settings&nbsp;
-                        <span class="glyphicon glyphicon-cog"></span>
+                    <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif;"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
                     </button>
                 </li>
-                <li><a href="help.html">Help&nbsp;<span class="glyphicon glyphicon-question-sign"></span></a>
+                <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Help</a>
                 </li>
             </ul>
         </nav>
@@ -132,7 +134,7 @@
                 <header class="primary">
                     <span class="open icon">&#9776;</span>
                     <hgroup>
-                        <h1 data-bind="Text: title"></h1>
+                        <h1 id="bookTitle" style="color:#e5e5e5"></h1>
                     </hgroup>
                 </header>
 
@@ -215,15 +217,15 @@
                         <h4 class="modal-title" id="myModalLabel">Open Document</h4>
                     </div>
                     <div class="modal-body">
-                        <a href="#" class="docOpenerButton" data-dismiss="modal">Moby Dick</a>
+                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(1)">Moby Dick</a>
                         <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal">Fundamentals Of Fundamentals</a>
+                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(2)">Fundamentals Of Fundamentals</a>
                         <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal">Books: A History</a>
+                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(3)">Books: A History</a>
                         <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal">Designing the user Interface</a>
+                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(4)">Designing the User Interface</a>
                         <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal">Designing the user Face</a>
+                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(5)">Designing the User Face</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -232,6 +234,36 @@
                 </div>
             </div>
         </div>
+        <!-- /Modal -->
+        <!-- Settings Modal -->
+        <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        font size
+                        <select>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /End Settings Modal -->
     </div>
     <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
     <script src="js/bamboo.0.1.js"></script>
