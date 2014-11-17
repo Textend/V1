@@ -9,7 +9,11 @@ function getSelectedText() {
 }
 
 function addToOutline() {
-  alert("Adding \"" + getSelectedText() + "\" to outline");
+  // alert("Adding \"" + getSelectedText() + "\" to outline");
+  var outlineText = getSelectedText();
+  console.log(outlineText)
+  $("#outlineContent").text(outlineText);
+  //alert(outlineText);
 }
 
 

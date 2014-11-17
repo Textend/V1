@@ -21,9 +21,10 @@
     $(function() {
         console.log("ready!");
         
-        var outlineText = "";
+        // var outlineText = "";
 
-        /* */
+        /* Document Opening And Closing */
+        $("#outline").hide()
         $("#doc").hide();
         var isDocumentOpen = false;
         var toggleDocumentStatus = function() {
@@ -37,6 +38,7 @@
         }
 
         var openDocument = function() {
+            hideOutline()
             $("#doc").show();
             // $("filebutton").text("Close Document");
             isDocumentOpen = true;
@@ -52,8 +54,33 @@
             }
         }
 
+        var hideDocument = function(){
+            $("#doc").hide();
+        }
+        var showDocument = function(){
+            if (isDocumentOpen) {$("#doc").show();}; 
+        }
+
+        /* Outline Fuctionz */
+        var isOutlineOpen = false;
+
+
+
+        var showOutline = function (){
+            console.log("show Outline")
+            $("#outline").show();
+        }
+
+        var hideOutline = function(){
+            console.log("hide Outline");
+            $("#outline").hide();   
+        }
 
         /* Button Bindingz*/
+        $("#showText").bind("click", function(){
+            hideOutline();
+            showDocument();
+        });
         $("a.docOpenerButton").bind("click", function (){
             openDocument()
         });
@@ -61,6 +88,12 @@
         $("#closeDocButton").bind("click", function (){
             closeDocument()
         });
+
+        $("#showOutline").bind("click", function (){
+            console.log("show Outline clicked")
+            hideDocument()
+            showOutline()
+        });        
     });
     </script>
 </head>
@@ -74,11 +107,11 @@
                     <button id="closeDocButton" type="button" class="btn btn-default"  style="width:100%;display:none;">Close Document</a>
                         <!-- <input type="file" id="fileinput" /> -->
                 </li>
-                <li><a href="index.html">Text&nbsp;<span class="glyphicon glyphicon-book"></span></a>
+                <li><a href="#" id="showText">Text&nbsp;<span class="glyphicon glyphicon-book"></span></a>
                 </li>
                 <li><a href="#">Annotations&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
                 </li>
-                <li><a href="outline.html">Outline&nbsp;<span class="glyphicon glyphicon-th-list"></span></a>
+                <li><a id="showOutline"href="#">Outline&nbsp;<span class="glyphicon glyphicon-th-list"></span></a>
                 </li>
                 <li>
                     <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif;">Settings&nbsp;
@@ -144,7 +177,7 @@
             </div>
         </div>
 
-        <div id="outline" style="display:none;">
+        <div id="outline">
             <div id="container">
                 <header class="primary">
                     <span class="open icon">&#9776;</span>
@@ -160,12 +193,11 @@
                         </div> -->
 
                     <div>
-                        <p>TODO: single page</p>
                         <p id="title">Outline for *Text*</p>
                     </div>
 
                     <div>
-                        <p class="textention">Some content should go here!</p>
+                        <p id="outlineContent" class="textention">Some content should go here!</p>
                     </div>
                 </section>
             </div>

@@ -10,11 +10,11 @@
          // = this.result;
          // By lines
          var newPara = document.createElement("p");
-         
+
          var lines = this.result.split('\n');
 
          for (var line = 0; line < lines.length; line++) {
-             var newLineOfText = document.createTextNode(lines[line] + "\n\n");\
+             var newLineOfText = document.createTextNode(lines[line] + "\n\n");
 
              newPara.appendChild(newLineOfText);
              doc.append(newPara);
