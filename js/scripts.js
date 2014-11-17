@@ -10,9 +10,12 @@
          // = this.result;
          // By lines
          var newPara = document.createElement("p");
+         
          var lines = this.result.split('\n');
+
          for (var line = 0; line < lines.length; line++) {
-             var newLineOfText = document.createTextNode(lines[line] + "\n\n");
+             var newLineOfText = document.createTextNode(lines[line] + "\n\n");\
+
              newPara.appendChild(newLineOfText);
              doc.append(newPara);
              console.log(lines[line]);
@@ -20,21 +23,8 @@
 
 
      };
-     hideInputPanel();
      reader.readAsText(file);
  };
+
  document.getElementById('file').onchange = openText;
  // document.getElementById('openfile').onclick = alert('click');
-
- $(function() {
-     $('#openfile').click(open);
- })
-
- function hideInputPanel() {
-     $('inputpanel').hide()
- }
-
- function open() {
-     openText();
-     alert('open')
- }
