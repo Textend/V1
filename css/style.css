@@ -45,6 +45,24 @@ body {
     border: 1px solid black;
     padding: 2px;
 }
+
+.custom-menu a {
+    text-decoration: none;
+    color: blue;
+}
+
+.custom-menu a:link {
+    color: #151515;
+}
+
+.custom-menu a:visited {
+    color: #151515;
+}
+
+.custom-menu a:hover {
+    color: #ff0000;
+}
+
 @media only screen and (min-width: 768px) {
 	#textpanel {
     color: #e2e2e2;
