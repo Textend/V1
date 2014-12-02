@@ -49,8 +49,9 @@
             <a href="#" onClick="addToOutline()">Add To Outline</a>
         </div>
 
-        <div>
+    
             <div id="container">
+
                 <header class="primary">
                     <span class="open icon">&#9776;</span>
                     <hgroup>
@@ -65,6 +66,10 @@
                             <input type="file" name="file" id="file">
                         </div> -->
 
+                    <div id="openfile">
+                        <input type="file" name="file" id="file">
+                        <p id="openedfile"></p>
+                    </div>
                     <div id="doc">
                         <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
                         <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
@@ -100,7 +105,6 @@
                     </div>
                 </section>
             </div>
-        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -144,6 +148,7 @@
                         <h4 class="modal-title" id="myModalLabel">Change Document?</h4>
                     </div>
                     <div class="modal-body">
+                        <input type="file" id="file" name="file"/>
                         <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(1)">Moby Dick</a>
                         <br>
                         <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(2)">Fundamentals Of Fundamentals</a>

@@ -1,23 +1,17 @@
  var openText = function() {
 
      var file = this.files[0];
-     var doc = [];
 
      var reader = new FileReader();
      reader.onload = function(progressEvent) {
          // Entire file
          console.log(this.result);
-         // = this.result;
-         // By lines
-         var newPara = document.createElement("p");
+         document.getElementById("openedfile").innerHTML = this.result;
 
          var lines = this.result.split('\n');
 
          for (var line = 0; line < lines.length; line++) {
              var newLineOfText = document.createTextNode(lines[line] + "\n\n");
-
-             newPara.appendChild(newLineOfText);
-             doc.append(newPara);
              console.log(lines[line]);
          }
 
