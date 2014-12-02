@@ -13,92 +13,12 @@
     <link rel="stylesheet" href="css/bamboo.css">
 
     <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="js/outline.js"></script>
     <script src="js/rightClick.js"></script>
     <script src="js/setTitle.js"></script>
     <script src="lib/knockout-3.2.0.js"></script>
     <script src="js/textFileModel.js"></script>
-    <script>
-    $(function() {
-        console.log("ready!");
-
-        // var outlineText = "";
-        
-
-        /* Document Opening And Closing */
-        $("#outline").hide()
-        $("#doc").hide();
-        var isDocumentOpen = false;
-        var toggleDocumentStatus = function() {
-            if (isDocumentOpen) {
-                $("#openDocButton").hide();
-                $("#closeDocButton").show();
-            } else {
-                $("#openDocButton").show();
-                $("#closeDocButton").hide();
-            }
-        }
-
-        var openDocument = function() {
-            hideOutline()
-            $("#doc").show();
-            // $("filebutton").text("Close Document");
-            isDocumentOpen = true;
-            toggleDocumentStatus();
-        }
-
-        var closeDocument = function() {
-            if (isDocumentOpen) {
-                $("#doc").hide();
-                // $("filebutton").text("Open Document");
-                isDocumentOpen = false;
-                toggleDocumentStatus();
-            }
-        }
-
-        var hideDocument = function() {
-            $("#doc").hide();
-        }
-        var showDocument = function() {
-            if (isDocumentOpen) {
-                $("#doc").show();
-            };
-        }
-
-        /* Outline Fuctionz */
-        var isOutlineOpen = false;
-
-
-
-        var showOutline = function() {
-            console.log("show Outline")
-            $("#outline").show();
-        }
-
-        var hideOutline = function() {
-            console.log("hide Outline");
-            $("#outline").hide();
-        }
-
-        /* Button Bindingz*/
-        $("#showText").bind("click", function() {
-            hideOutline();
-            showDocument();
-        });
-        $("a.docOpenerButton").bind("click", function() {
-            openDocument()
-        });
-
-        $("#closeDocButton").bind("click", function() {
-            closeDocument()
-        });
-
-        $("#showOutline").bind("click", function() {
-            console.log("show Outline clicked")
-            hideDocument()
-            showOutline()
-        });
-    });
-    </script>
+    <script src="js/docChange.js"></script>
 </head>
 
 <body style="background-color:#232323;">
@@ -126,7 +46,7 @@
         </nav>
 
         <div class='custom-menu'>
-            <a href="##" onClick="addToOutline()">Add To Outline</a>
+            <a href="#" onClick="addToOutline()">Add To Outline</a>
         </div>
 
         <div id="doc">
@@ -200,7 +120,7 @@
                     </div>
 
                     <div>
-                        <p id="outlineContent" class="textention">Some content should go here!</p>
+                        <p id="outlineContent" class="textention"></p>
                     </div>
                 </section>
             </div>

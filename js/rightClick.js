@@ -8,11 +8,15 @@ function getSelectedText() {
   return text;
 }
 
+var outlineNumber = 0;
+
 function addToOutline() {
   // alert("Adding \"" + getSelectedText() + "\" to outline");
   var outlineText = getSelectedText();
   console.log(outlineText)
-  $("#outlineContent").text(outlineText);
+  
+  insertInOutline(/*new Tuple(outlineNumber++,*/ outlineText);
+  // $("#outlineContent").text(outlineText);
   //alert(outlineText);
 }
 
