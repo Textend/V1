@@ -22,6 +22,7 @@ $(function() {
     var openDocument = function() {
         hideOutline()
         $("#doc").show();
+        $("#title").show();
         // $("filebutton").text("Close Document");
         isDocumentOpen = true;
         toggleDocumentStatus();
@@ -30,6 +31,7 @@ $(function() {
     var closeDocument = function() {
         if (isDocumentOpen) {
             $("#doc").hide();
+            $("#title").hide();
             // $("filebutton").text("Open Document");
             isDocumentOpen = false;
             toggleDocumentStatus();
@@ -57,7 +59,7 @@ $(function() {
         var outlineText = "<ul>";
 
         for (var i = 0; i < outline.length; i++) {
-            outlineText += "<li>" + outline[i] + "</li>";
+            outlineText += "<li>" + outline[i].content + "</li>";
         }
 
         outlineText += "</ul>";
