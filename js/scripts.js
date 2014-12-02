@@ -1,6 +1,6 @@
 var openText = function() {
-
-    var file = this.files[0];
+    var file = document.getElementById("fileSelect").files[0];
+    alert(file.name);
 
     var reader = new FileReader();
     reader.onload = function(progressEvent) {
@@ -22,5 +22,13 @@ var openText = function() {
     reader.readAsText(file);
 };
 
-document.getElementById('file').onchange = openText;
+// document.getElementById('file').onchange = openText;
+// document.getElementById('openfilebtn').onclick = openText;
+
+$("#openfilebtn").bind("click", function() {
+    openText();
+    $("#doc").show();
+    // openDocument();
+});
+
 // document.getElementById('openfile').onclick = alert('click');

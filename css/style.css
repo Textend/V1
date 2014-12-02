@@ -69,16 +69,16 @@ body {
     margin: 300px;
     height: 100%;
 }
+
+
 #textpanel p {
     text-align: center;
     padding: 50px;
 }
-    #scroller {
-        padding: 75px;
-    }
-    .textention {
-        margin-right: 265px;
-        /*padding:50px;*/
-    }
+#scroller {
+    padding: 75px;
 }
+.textention {
+    margin-right: 265px;
+    /*padding:50px;*/
 }
