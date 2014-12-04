@@ -64,7 +64,7 @@ $(function() {
 
         outlineText += "</ul>";
 
-        // alert(outlineText);
+        alert(outlineText);
 
         document.getElementById("outlineContent").innerHTML = outlineText;
 

@@ -24,18 +24,17 @@ function getParentElement() {
             parentEl = parentEl.parentNode;
         }
     }
-    alert(parentEl.id);
+    return parentEl;
 }
-
-var outlineNumber = 0;
 
 function addToOutline() {
     // alert("Adding \"" + getSelectedText() + "\" to outline");
     var outlineText = getSelectedText();
-    getParentElement();
-    console.log(outlineText)
+    var parentEl = getParentElement();
+    var id = parentEl.id.substring(8);
+    console.log(outlineText);
     
-    insertInOutline(new Tuple(outlineNumber++, outlineText));
+    insertInOutline(new Tuple(id, outlineText));
     // $("#outlineContent").text(outlineText);
     //alert(outlineText);
 }

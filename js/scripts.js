@@ -1,6 +1,6 @@
 var openText = function() {
     var file = document.getElementById("fileSelect").files[0];
-    alert(file.name);
+    // alert(file.name);
 
     var reader = new FileReader();
     reader.onload = function(progressEvent) {
