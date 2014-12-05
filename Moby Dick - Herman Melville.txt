@@ -1,7 +1,7 @@
 @Title: Moby Dick
 @Author: Herman Melville
 
-@Section, CHAPTER 1
+@Section: CHAPTER 1
 
 Loomings.
 
@@ -214,7 +214,7 @@ them all, one grand hooded phantom, like a snow hill in the air.
 
 
 
-@Section, CHAPTER 2
+@Section: CHAPTER 2
 
 The Carpet-Bag.
 
@@ -357,7 +357,7 @@ frosted feet, and see what sort of a place this "Spouter" may be.
 
 
 
-@Section, CHAPTER 3
+@Section: CHAPTER 3
 
 The Spouter-Inn.
 
@@ -947,7 +947,7 @@ I turned in, and never slept better in my life.
 
 
 
-@Section, CHAPTER 4
+@Section: CHAPTER 4
 
 The Counterpane.
 
@@ -1102,7 +1102,7 @@ sporting his harpoon like a marshal's baton.
 
 
 
-@Section, CHAPTER 5
+@Section: CHAPTER 5
 
 Breakfast.
 
@@ -1185,7 +1185,7 @@ with his inseparable hat on, when I sallied out for a stroll.
 
 
 
-@Section, CHAPTER 6
+@Section: CHAPTER 6
 
 The Street.
 
@@ -1276,7 +1276,7 @@ Moluccas instead of the Puritanic sands.
 
 
 
-@Section, CHAPTER 7
+@Section: CHAPTER 7
 
 The Chapel.
 
@@ -1407,7 +1407,7 @@ will, for stave my soul, Jove himself cannot.
 
 
 
-@Section, CHAPTER 8
+@Section: CHAPTER 8
 
 The Pulpit.
 
@@ -1504,7 +1504,7 @@ a voyage complete; and the pulpit is its prow.
 
 
 
-@Section, CHAPTER 9
+@Section: CHAPTER 9
 
 The Sermon.
 
@@ -1854,7 +1854,7 @@ departed, and he was left alone in the place.
 
 
 
-@Section, CHAPTER 10
+@Section: CHAPTER 10
 
 A Bosom Friend.
 
@@ -2006,7 +2006,7 @@ pair.
 
 
 
-@Section, CHAPTER 11
+@Section: CHAPTER 11
 
 Nightgown.
 
@@ -2078,7 +2078,7 @@ I give.
 
 
 
-@Section, CHAPTER 12
+@Section: CHAPTER 12
 
 Biographical.
 
@@ -2168,7 +2168,7 @@ light, we rolled over from each other, this way and that, and very
 soon were sleeping.
 
 
-@Section, CHAPTER 13
+@Section: CHAPTER 13
 
 Wheelbarrow.
 
@@ -2340,7 +2340,7 @@ meridians.  We cannibals must help these Christians."
 
 
 
-@Section, CHAPTER 14
+@Section: CHAPTER 14
 
 Nantucket.
 
@@ -2418,7 +2418,7 @@ pillow rush herds of walruses and whales.
 
 
 
-@Section, CHAPTER 15
+@Section: CHAPTER 15
 
 Chowder.
 
@@ -2545,7 +2545,7 @@ variety."
 
 
 
-@Section, CHAPTER 16
+@Section: CHAPTER 16
 
 The Ship.
 
@@ -3130,7 +3130,7 @@ other directions, so that for the present dark Ahab slipped my mind.
 
 
 
-@Section, CHAPTER 17
+@Section: CHAPTER 17
 
 The Ramadan.
 
@@ -3372,7 +3372,7 @@ halibut bones.
 
 
 
-@Section, CHAPTER 18
+@Section: CHAPTER 18
 
 His Mark.
 
@@ -3533,7 +3533,7 @@ otherwise might have been wasted.
 
 
 
-@Section, CHAPTER 19
+@Section: CHAPTER 19
 
 The Prophet.
 
@@ -3689,8 +3689,8 @@ humbug.
 
 
 
-@Section, CHAPTER 20
-@Section, 
+@Section: CHAPTER 20
+@Section: 
 All Astir.
 
 
