@@ -19,6 +19,9 @@ var openText = function() {
         var fontSize = select.options[select.selectedIndex].value;
         var fontWeight = fontSize / 15.0;
 
+        $("*.bookTitle").text("");
+        $("*.bookAuthor").text("");
+
         for (var line = 0; line < lines.length; line++) {
             var cLine = lines[line];
             if (cLine.trim().substring(0, 7) === "@Title:") {

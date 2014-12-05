@@ -26,7 +26,6 @@
         var name = document.getElementById("searchForm").elements["searchItem"].value;
         var pattern = name.toLowerCase();
         var targetId = "";
-        alert("searching for "+ name);
         var divs = document.getElementsByClassName("textention");
         for (var i = 0; i < divs.length; i++) {
             var para = divs[i]; //.getElementsByTagName("p");
@@ -37,8 +36,6 @@
                 break;
             }
         }
-
-        alert(name + " found at "+targetId);
     }
     </script>
 </head>
