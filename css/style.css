@@ -11,7 +11,7 @@ body {
     min-height: 100%;
 }
 #wrapper {
-    background-color: #151515;
+    /*background-color: #151515;*/
     height: 100%;
 }
 #inputpanel {
@@ -28,7 +28,8 @@ body {
     text-align: center;
 }
 .textention {
-    color: #e2e2e2;
+    /*color: #e2e2e2;*/
+    color:#000;
 }
 #scroller{
 	padding: 20px;

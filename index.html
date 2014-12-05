@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Textend V0.0.3</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Textend V0.1</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bamboo.css">
+    <!-- <link rel="stylesheet" href="css/bamboo.css"> -->
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <script src="lib/jquery-2.1.1.min.js"></script>
     <script src="js/outline.js"></script>
-    <!-- <script src="js/rightClick.js"></script> -->
+    <script src="js/rightClick.js"></script>
     <script src="js/setTitle.js"></script>
     <script src="lib/knockout-3.2.0.js"></script>
     <script src="js/textFileModel.js"></script>
     <script src="js/docChange.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
-<body style="background-color:#232323;">
+<body>
+
     <div id="wrapper">
-        <nav id="main-nav" class="navigation overflow">
-            <ul>
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Authors Name?
+                    </a>
+                </li>
                 <li style="padding:5px;">
-                    <button id="openDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="width:100%">Open Document</a>
-                    <button id="closeDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#changeModal" style="width:100%;display:none;">Close Document</a>
-                            <!-- <input type="file" id="fileinput" /> -->
+                    <button id="openDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#openDocModal" style="">Open Document</a>
+                    <button id="closeDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#openDocModal" style="display:none;">Close Document</a>
                 </li>
                 <li><a href="#" id="showText"><span class="glyphicon glyphicon-book"></span>&nbsp;Text</a>
                 </li>
@@ -37,177 +59,142 @@
                 <li><a id="showOutline" href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Outline</a>
                 </li>
                 <li>
-                    <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif; background:#000"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
-                    </button>
+                    <a data-toggle="modal" data-target="#settingsModal" href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
+                    </a>
                 </li>
                 <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Help</a>
                 </li>
             </ul>
-        </nav>
-
-        <div class='custom-menu'>
-            <a href="#" onClick="addToOutline()">Add To Outline</a>
         </div>
+        <!-- /#sidebar-wrapper -->
 
-    
-        <div id="container">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <header id="title" class="primary">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="open icon">&#9776;</span></a>
+                    <hgroup>
+                        <h1 class="bookTitle" style="color:#e5e5e5"></h1>
+                        <h1 class="bookAuthor" style="color:#e5e5e5"></h1>
+                    </hgroup>
+                </header>
 
-            <header id="title" class="primary">
-                <span class="open icon">&#9776;</span>
-                <hgroup>
-                    <h1 class="bookTitle" style="color:#e5e5e5"></h1>
-                    <h1 class="bookAuthor" style="color:#e5e5e5"></h1>
-                </hgroup>
-            </header>
-
-            <section id="scroller" class="overflow">
-                <!-- <div id="inputpanel">
-                        <button id="openfile">Open File</button>
-                        <input type="file" name="file" id="file">
-                    </div> -->
-
-                <div id="openfile">
-                    <input type="file" name="file" id="file">
-                    <p id="openedfile"></p>
-                </div>
-                <div id="doc">
-                    <!--
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork class ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    <p class="textention">Bacon ipsum dolor amet doner pork chop ham brisket. Bacon meatball meatloaf hamburger. Porchetta turkey leberkas, ball tip fatback sirloin beef ribs. Salami shoulder drumstick, chuck capicola filet mignon shankle ham ground round tri-tip frankfurter pork jowl.</p>
-                    <p class="textention">Pastrami filet mignon ham shank pork belly rump. Turkey leberkas prosciutto pork swine short ribs. Capicola kevin meatloaf, turkey short loin chuck pig short ribs bacon ham t-bone sausage pork loin. Pork belly shank rump prosciutto short loin, landjaeger jowl pig porchetta pancetta.</p>
-                    <p class="textention">Capicola spare ribs chuck shank corned beef. Tenderloin pancetta sausage ham hock. Meatball salami short loin biltong. Kielbasa fatback leberkas pork chop ball tip landjaeger tenderloin sirloin turkey bresaola ham hock brisket pastrami beef. Corned beef shankle leberkas t-bone, short ribs short loin prosciutto meatloaf filet mignon beef ham ball tip sirloin salami.</p>
-                    <p class="textention">Chuck pastrami pancetta, cow shoulder hamburger meatball jowl bresaola kielbasa. Sausage ribeye t-bone ham kevin pancetta tongue frankfurter tenderloin shoulder. Cow shoulder pastrami fatback pork chop short loin andouille swine ground round jowl kevin. Rump t-bone jerky, chicken tongue filet mignon ham. Hamburger pastrami leberkas sausage brisket turducken meatloaf frankfurter pig strip steak rump tri-tip tail boudin.</p>
-                    -->
-                </div>
-                <div id="outline">
-                    <p id="outlineContent" class="textention"></p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Open Document</h4>
+                <section id="scroller" class="overflow">
+                    <div id="doc">
+                        <p id="docContent" class="textention"></p>
                     </div>
-                    <div class="modal-body">
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(1)">Moby Dick</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(2)">Fundamentals Of Fundamentals</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(3)">Books: A History</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(4)">Designing the User Interface</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(5)">Designing the User Face</a>
+                    <div id="outline">
+                        <p id="outlineContent" class="textention"></p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
+                </section>
+
             </div>
+
+
         </div>
-        <!-- /Modal -->
-        <!-- Modal -->
-        <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Change Document</h4>
-                    </div>
-                    <div class="modal-body">
-                        <input type="file" id="file" name="file"/>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(1)">Moby Dick</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(2)">Fundamentals Of Fundamentals</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(3)">Books: A History</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(4)">Designing the User Interface</a>
-                        <br>
-                        <a href="#" class="docOpenerButton" data-dismiss="modal" onclick="setTitle(5)">Designing the User Face</a>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Modal -->
-        <!-- Settings Modal -->
-        <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Settings</h4>
-                    </div>
-                    <div class="modal-body">
-                        font size
-                        <select>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                            <option value="25">25</option>
-                            <option value="30">30</option>
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save settings</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /End Settings Modal -->
+        <!-- /#page-content-wrapper -->
+
     </div>
+    <!-- /#wrapper -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="openDocModal" tabindex="-1" role="dialog" aria-labelledby="openModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="openModalLabel">Open Document</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="file" name="file" id="file" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="float: left" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" style="float: right" class="btn btn-primary" data-dismiss="modal" id="openBtn">Open</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="settingsModalLabel">Settings</h4>
+                </div>
+                <div class="modal-body">
+                    font size
+                    <select>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" style="float: left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" style="float: right" data-dismiss="modal">Save settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /End Settings Modal -->
+
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="helpModalLabel">Help</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- TODO -->
+                    <p>Here is where some helpful info would go!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-    <script src="js/bamboo.0.1.js"></script>
     <script src="lib/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+    
+    <!-- Other Scripts -->
+    <script src="js/loadfile.js"></script>
+    <!-- <script src="js/bamboo.0.1.js"></script> -->
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
     <script>
     var site = new Bamboo();
     </script>
-</body>
 
+</body>
 
 </html>
