@@ -7,6 +7,7 @@ $(function() {
     /* Document Opening And Closing */
     $("#outline").hide()
     $("#doc").hide();
+    $("#title").hide();
 
     var isDocumentOpen = false;
     var toggleDocumentStatus = function() {

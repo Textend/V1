@@ -12,7 +12,14 @@ var openText = function() {
         var lines = this.result.split('\n');
 
         for (var line = 0; line < lines.length; line++) {
-            outHTML += "<p class=textention id=\"textline" + line + "\">" + lines[line] + "</p>";
+            var cLine = lines[line];
+            if (cLine.trim().substring(0, 7) === "@Title:") {
+                $("*.bookTitle").text(cLine.trim().substring(7).trim());
+            } else if (cLine.trim().substring(0, 8) === "@Author:") {
+                $("*.bookAuthor").text("by " + cLine.trim().substring(8).trim());
+            } else if (cLine.trim() !== "") {
+                outHTML += "<p class=textention id=\"textline" + line + "\">" + lines[line] + "</p>";
+            }
             // var newLineOfText = document.createTextNode(lines[line] + "\n\n");
             // console.log(lines[line]);
         }
