@@ -63,6 +63,23 @@ body {
     color: #ff0000;
 }
 
+.outline-item a {
+    text-decoration: none;
+    color: #e2e2e2;
+}
+
+.outline-item a:link {
+    color: #e2e2e2;
+}
+
+.outline-item a:visited {
+    color: #e2e2e2;
+}
+
+.outline-item a:hover {
+    color:#ffffff;
+}
+
 .bookTitle {
     font-size: 1.5em;
 }

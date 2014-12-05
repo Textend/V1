@@ -38,7 +38,7 @@ function addToOutline() {
 
     console.log(outlineText)
     
-    insertInOutline(new Tuple(id, outlineText));
+    if (id) insertInOutline(new Tuple(id, outlineText));
     // $("#outlineContent").text(outlineText);
     //alert(outlineText);
 }
