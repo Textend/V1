@@ -39,7 +39,7 @@
                     <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif;"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
                     </button>
                 </li>
-                <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Help</a>
+                <li><a href="#" data-toggle="modal" data-target="#helpModal"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Help</a>
                 </li>
             </ul>
         </nav>
@@ -61,7 +61,7 @@
 
             <section id="scroller" class="overflow">
                 <div id="doc">
-                    <p id="docContent" class="textention">This is some test document content</p>
+                    <p id="docContent" class="textention"></p>
                 </div>
                 <div id="outline">
                     <p id="outlineContent" class="textention"></p>
@@ -70,7 +70,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="openDocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="openDocModal" tabindex="-1" role="dialog" aria-labelledby="openModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -78,14 +78,14 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Open Document</h4>
+                        <h4 class="modal-title" id="openModalLabel">Open Document</h4>
                     </div>
                     <div class="modal-body">
                         <input type="file" name="file" id="file">
                     </div>
                     <div class="modal-footer">
                         <button type="button" style="float: left" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" style="float: right" class="btn btn-default" data-dismiss="modal" id="openBtn">Open</button>
+                        <button type="button" style="float: right" class="btn btn-primary" data-dismiss="modal" id="openBtn">Open</button>
                         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         <!-- /Modal -->
 
         <!-- Settings Modal -->
-        <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -102,7 +102,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                        <h4 class="modal-title" id="settingsModalLabel">Settings</h4>
                     </div>
                     <div class="modal-body">
                         font size
@@ -115,13 +115,34 @@
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save settings</button>
+                        <button type="button" class="btn btn-default" style="float: left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" style="float: right" data-dismiss="modal">Save settings</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /End Settings Modal -->
+
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="helpModalLabel">Help</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- TODO -->
+                        <p>Here is where some helpful info would go!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
     <script src="js/bamboo.0.1.js"></script>
