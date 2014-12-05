@@ -1,3 +1,14 @@
+function onOutlineLinkClick(paragraph) {
+    $("#outline").hide();
+    $("#doc").show();
+    $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+
+    var target = document.getElementById("textline_" + paragraph);
+    target.scrollIntoView();
+    target.style.backgroundColor = "#ffff00"
+    target.style.color = "#000000";
+}
+
 $(function() {
     console.log("ready!");
 
@@ -52,8 +63,6 @@ $(function() {
     /* Outline Fuctionz */
     var isOutlineOpen = false;
 
-
-
     var showOutline = function() {
         console.log("show Outline")
 
@@ -64,7 +73,11 @@ $(function() {
         var fontWeight = fontSize / 15.0;
 
         for (var i = 0; i < outline.length; i++) {
-            outlineText += "<li style=\"font-size: " + fontWeight + "em\">" + outline[i].content + "</li>";
+            outlineText += "<li class=\"outline-item\">";
+            outlineText += "<a href=\"#\" style=\"font-size: " + fontWeight + "em\" "
+                    + "onClick=\"onOutlineLinkClick(" + outline[i].position + ")\">"
+            outlineText += outline[i].content + "</a></li>";
+            // outlineText += "<li>test</li>"
         }
 
         outlineText += "</ul>";
