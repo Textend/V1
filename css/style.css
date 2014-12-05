@@ -63,6 +63,14 @@ body {
     color: #ff0000;
 }
 
+.bookTitle {
+    font-size: 1.5em;
+}
+
+.bookAuthor {
+    font-size: 1.5em;
+}
+
 @media only screen and (min-width: 768px) {
 	#textpanel {
     color: #e2e2e2;

@@ -27,12 +27,18 @@
         var pattern = name.toLowerCase();
         var targetId = "";
         var divs = document.getElementsByClassName("textention");
+
+        $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+
         for (var i = 0; i < divs.length; i++) {
             var para = divs[i]; //.getElementsByTagName("p");
             var index = para.innerText.toLowerCase().indexOf(pattern);
             if (index != -1) {
                 targetId = divs[i].id;
-                document.getElementById(targetId).scrollIntoView();
+                var target = document.getElementById(targetId)
+                target.scrollIntoView();
+                target.style.backgroundColor = "#ffff00"
+                target.style.color = "#000000";
                 break;
             }
         }
