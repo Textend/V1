@@ -46,35 +46,42 @@
     </script>
 </head>
 
-<body style="background-color:#232323;">
+<body>
     <div id="wrapper">
         <nav id="main-nav" class="navigation overflow">
             <ul>
-                <li style="padding:5px;">
+                
+
+                <li style="padding:5px; border-bottom:0">
                     <button id="openDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#openDocModal" style="width:100%">Open Document</a>
                         <button id="closeDocButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#openDocModal" style="width:100%;display:none;">Close Document</a>
                 </li>
-                <li><a href="#" id="showText"><span class="glyphicon glyphicon-book"></span>&nbsp;Text</a>
+                <li style="margin: 20px auto 30px; border: 0;">
+                    <form id="searchForm" action="javascript:search();">
+                        <div class="input-group" style="block">
+                            <input type="text" id="searchItem" class="form-control" placeholder="Search" style="display:inline-block;">
+                            <div class="input-group-btn">
+                                <button id="go" class="btn btn-default btn-xs" type="button" onclick="document.getElementById('searchForm').submit(); return false;" style="display:inline-block"><i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </li>
+                <!-- <hr> -->
+                <li style="border-top: solid 2px rgba(0,0,0,0.1);"><a href="#" id="showText"><span class="glyphicon glyphicon-book"></span>&nbsp;Text</a>
                 </li>
                 <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Annotations</a>
                 </li>
                 <li><a id="showOutline" href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Outline</a>
                 </li>
                 <li>
-                    <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif;"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
+                    <button data-toggle="modal" data-target="#settingsModal" style="border:0; width:100%;font-weight:100;text-align:left;font-family: 'Open Sans', sans-serif; line-height:40px"><span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
                     </button>
                 </li>
                 <li><a href="#" data-toggle="modal" data-target="#helpModal"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Help</a>
                 </li>
-                <li>
-                    <form id="searchForm" action="javascript:search();">
-                        <div class="input-group" >
-                            <button id="go" class="btn btn-default" type="button" onclick="document.getElementById('searchForm').submit(); return false;" style="display:inline-block"><span class="glyphicon glyphicon-search"></span>
-                            </button>
-                            <input type="text" id="searchItem" class="form-control" placeholder="Search" style="display:inline-block">
-                        </div>
-                    </form>
-                </li>
+                
             </ul>
         </nav>
 

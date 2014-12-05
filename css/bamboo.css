@@ -30,7 +30,7 @@
 		.navigation ul li button ,
 		.navigation ul li button:hover ,
 		.navigation ul li button:visited ,
-		.navigation ul li button:focus { text-decoration: none; color: #151515; background-color: transparent; display: block; padding: 4px 14px 4px 14px; line-height: 40px }
+		.navigation ul li button:focus { text-decoration: none; color: #151515; background-color: transparent; display: block; padding: 4px 14px 4px 14px;}
 		
 		
 	/*	Presentation styles
