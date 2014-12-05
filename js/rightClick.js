@@ -34,7 +34,7 @@ function addToOutline() {
     // alert("Adding \"" + getSelectedText() + "\" to outline");
     var outlineText = getSelectedText();
     var parentEl = getParentElement();
-    var id = parentEl.id.substring(8);
+    var id = parentEl.id.substring(9);
 
     console.log(outlineText)
     

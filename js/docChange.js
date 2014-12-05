@@ -57,10 +57,14 @@ $(function() {
     var showOutline = function() {
         console.log("show Outline")
 
-        var outlineText = "<ul>";
+        var outlineText = "<ul id=\"outlineList\">";
+
+        var select = document.getElementById("fontSizeSelect");
+        var fontSize = select.options[select.selectedIndex].value;
+        var fontWeight = fontSize / 15.0;
 
         for (var i = 0; i < outline.length; i++) {
-            outlineText += "<li>" + outline[i].content + "</li>";
+            outlineText += "<li style=\"font-size: " + fontWeight + "em\">" + outline[i].content + "</li>";
         }
 
         outlineText += "</ul>";

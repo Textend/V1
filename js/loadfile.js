@@ -1,3 +1,5 @@
+var numLines = 0;
+
 var openText = function() {
 
     var file = this.files[0];
@@ -11,6 +13,12 @@ var openText = function() {
         var outHTML = "";
         var lines = this.result.split('\n');
 
+        numLines = lines.length;
+
+        var select = document.getElementById("fontSizeSelect");
+        var fontSize = select.options[select.selectedIndex].value;
+        var fontWeight = fontSize / 15.0;
+
         for (var line = 0; line < lines.length; line++) {
             var cLine = lines[line];
             if (cLine.trim().substring(0, 7) === "@Title:") {
@@ -18,7 +26,9 @@ var openText = function() {
             } else if (cLine.trim().substring(0, 8) === "@Author:") {
                 $("*.bookAuthor").text("by " + cLine.trim().substring(8).trim());
             } else if (cLine.trim() !== "") {
-                outHTML += "<p class=textention id=\"textline" + line + "\">" + lines[line] + "</p>";
+                outHTML += "<p class=textention id=\"textline_" + line + "\" style=\"font-size: " + fontWeight + "em\">" + lines[line] + "</p>";
+            } else {
+                outHTML += "<br/>";
             }
             // var newLineOfText = document.createTextNode(lines[line] + "\n\n");
             // console.log(lines[line]);
@@ -31,3 +41,19 @@ var openText = function() {
 
 document.getElementById('file').onchange = openText;
 // document.getElementById('openfile').onclick = alert('click');
+
+
+
+$("#saveSettingsBtn").bind("click", function() {
+    var select = document.getElementById("fontSizeSelect");
+    var fontSize = select.options[select.selectedIndex].value;
+
+    var fontWeight = fontSize / 15.0;
+
+    $("#outlineList").children().css("font-size", fontWeight + "em");
+
+    $(".bookTitle").css("font-size", (fontWeight * 1.5) + "em");
+    $(".bookAuthor").css("font-size", (fontWeight * 1.5) + "em");
+
+    $(".textention").css("font-size", fontWeight + "em");
+});
