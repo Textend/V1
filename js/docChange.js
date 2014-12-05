@@ -1,13 +1,25 @@
+function removeHighlighting() {
+    // $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+
+    $(".search-highlight").removeClass("search-highlight");
+    $(".highlight").removeClass("highlight");
+}
+
 function onOutlineLinkClick(paragraph) {
     $("#outline").hide();
     $("#doc").show();
-    $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+    $(".search-highlight").removeClass("search-highlight");
+    // $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
 
     var target = document.getElementById("textline_" + paragraph);
     target.scrollIntoView();
-    target.style.backgroundColor = "#ffff00"
-    target.style.color = "#000000";
+    if (!$("#textline_" + paragraph).hasClass("highlight")) {
+        $("#textline_" + paragraph).addClass("search-highlight");
+    }
+    // target.style.backgroundColor = "#ffff00"
+    // target.style.color = "#000000";
 }
+
 
 $(function() {
     console.log("ready!");

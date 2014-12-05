@@ -28,6 +28,12 @@ function getParentElement() {
     return parentEl;
 }
 
+function highlight() {
+    var parentEl = getParentElement();
+    var id = parentEl.id.substring(9);
+
+    $("#textline_" + id).addClass("highlight");
+}
 
 
 function addToOutline() {

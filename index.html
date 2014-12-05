@@ -28,17 +28,19 @@
         var targetId = "";
         var divs = document.getElementsByClassName("textention");
 
-        $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+        // $(".textention").css("background-color", "transparent").css("color", "#e2e2e2");
+        $(".search-highlight").removeClass("search-highlight");
 
         for (var i = 0; i < divs.length; i++) {
             var para = divs[i]; //.getElementsByTagName("p");
             var index = para.innerText.toLowerCase().indexOf(pattern);
             if (index != -1) {
                 targetId = divs[i].id;
-                var target = document.getElementById(targetId)
-                target.scrollIntoView();
-                target.style.backgroundColor = "#ffff00"
-                target.style.color = "#000000";
+                // var target = document.getElementById(targetId)
+                // target.scrollIntoView();
+                // target.style.backgroundColor = "#ffff00"
+                // target.style.color = "#000000";
+                $("#textline_" + id).addClass("search-highlight");
                 break;
             }
         }
@@ -79,7 +81,9 @@
         </nav>
 
         <div class='custom-menu'>
-            <a href="#" onClick="addToOutline()">Add To Outline</a>
+            <a href="#" onClick="addToOutline()">Add To Outline</a> <br/>
+            <a href="#" onClick="highlight()">Highlight</a> <br/>
+            <a href="#" onclick="removeHighlighting()">Remove Highlighting</a>
         </div>
 
 
