@@ -36,11 +36,13 @@
             var index = para.innerText.toLowerCase().indexOf(pattern);
             if (index != -1) {
                 targetId = divs[i].id;
-                // var target = document.getElementById(targetId)
-                // target.scrollIntoView();
+                var target = document.getElementById(targetId)
+                target.scrollIntoView();
                 // target.style.backgroundColor = "#ffff00"
                 // target.style.color = "#000000";
-                $("#textline_" + id).addClass("search-highlight");
+                if (!$("#" + targetId).hasClass("highlight")) {
+                    $("#" + targetId).addClass("search-highlight");
+                }
                 break;
             }
         }

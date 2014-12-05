@@ -28,11 +28,33 @@ function getParentElement() {
     return parentEl;
 }
 
+function getEndParentElement() {
+    var parentEl = null, sel;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.rangeCount) {
+            parentEl = sel.getRangeAt(0).endContainer;
+            if (parentEl.nodeType != 1) {
+                parentEl = parentEl.parentNode;
+            }
+        }
+    } else if ((sel = document.selection) && sel.type != "Control") {
+        parentEl = sel.createRange().endContainer;
+        if (parentEl.nodeType != 1) {
+            parentEl = parentEl.parentNode;
+        }
+    }
+    return parentEl;
+}
+
 function highlight() {
     var parentEl = getParentElement();
-    var id = parentEl.id.substring(9);
+    var id = parseInt(parentEl.id.substring(9));
+    var id2 = parseInt(getEndParentElement().id.substring(9));
 
-    $("#textline_" + id).addClass("highlight");
+    for (var i = id; i <= id2; i++) {
+        $("#textline_" + i).addClass("highlight");
+    }
 }
 
 
