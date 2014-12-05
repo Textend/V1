@@ -82,7 +82,7 @@ $(function() {
         hideOutline();
         showDocument();
     });
-    $("a.docOpenerButton").bind("click", function() {
+    $("#openBtn").bind("click", function() {
         openDocument()
     });
 
