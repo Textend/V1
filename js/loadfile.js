@@ -9,10 +9,10 @@ var openText = function() {
         // document.getElementById("openedfile").innerHTML = this.result;
 
         var outHTML = "";
-        var lines = this.result.split('\n');
+        var lines = this.result.split('\r');
 
         for (var line = 0; line < lines.length; line++) {
-            outHTML += "<p class=textention id=\"textline" + line + "\">" + lines[line] + "</p>";
+            outHTML += "<p class=textention id=\"textline_" + line + "\">" + lines[line] + "</p>";
             // var newLineOfText = document.createTextNode(lines[line] + "\n\n");
             // console.log(lines[line]);
         }
