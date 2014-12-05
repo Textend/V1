@@ -28,6 +28,9 @@ var openText = function() {
                 $("*.bookTitle").text(cLine.trim().substring(7).trim());
             } else if (cLine.trim().substring(0, 8) === "@Author:") {
                 $("*.bookAuthor").text("by " + cLine.trim().substring(8).trim());
+            } else if (cLine.trim().substring(0, 9) === "@Section:") {
+                outHTML += "<p class=textention-section id=\"textline_" + line + "\" style=\"font-size: " + (1.25 * fontWeight) + "em\">" 
+                        + cLine.trim().substring(9).trim() + "</p>";
             } else if (cLine.trim() !== "") {
                 outHTML += "<p class=textention id=\"textline_" + line + "\" style=\"font-size: " + fontWeight + "em\">" + lines[line] + "</p>";
             } else {
@@ -59,4 +62,5 @@ $("#saveSettingsBtn").bind("click", function() {
     $(".bookAuthor").css("font-size", (fontWeight * 1.5) + "em");
 
     $(".textention").css("font-size", fontWeight + "em");
+    $(".textention-section").css("font-size", (1.25 * fontWeight) + "em"); 
 });

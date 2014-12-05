@@ -22,14 +22,19 @@ body {
 #textpanel {
     color: #e2e2e2;
     height: 100%;
-
 }
+
 #textpanel p {
     text-align: center;
 }
 .textention {
     color: #e2e2e2;
 }
+.textention-section {
+    color: #e2e2e2;
+    font-size: 1.25em;
+}
+
 #scroller{
 	padding: 20px;
 }
