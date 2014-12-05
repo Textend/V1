@@ -31,7 +31,7 @@ body {
     color: #e2e2e2;
 }
 #scroller{
-	padding: 20px;
+	/*padding: 20px;*/
 }
 #title {
     color: #e2e2e2;
@@ -82,7 +82,7 @@ body {
     padding: 50px;
 }
     #scroller {
-        padding: 75px;
+        padding: 20px 75px;
     }
     .textention {
         margin-right: 265px;
