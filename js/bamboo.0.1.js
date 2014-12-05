@@ -30,7 +30,7 @@ var Bamboo = (function (window, document) {
 		this.options = {
 		    menu: true,
 		    swipeToOpen: true,
-		    breakpoint: 768,
+		    breakpoint: 1440,
 		    menuWidth: 265,
 		    headerHeight: 50,
 		    snapThreshold: null,

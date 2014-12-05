@@ -38,22 +38,22 @@
 	#content { padding: 5px 20px; }
 
 
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 1440px) {*/
 
 	/*	Bamboo
 	=========================== */
-	#container { left: 265px; width: auto; overflow: auto; -webkit-overflow-scrolling: touch; }
-	#scroller { background:#232323; }
+	/*#container { left: 265px; width: auto; overflow: auto; -webkit-overflow-scrolling: touch; }*/
+	/*#scroller { background:#232323; }*/
 
 	/*	Header
 	=========================== */
-	header.primary { height: auto; background: transparent; border: none }
-	header.primary .icon { display: none }
-	header.primary hgroup { text-align: left; padding: 20px 20px 5px 20px }
-	header.primary hgroup h1 { position: relative; left: 0; right: auto; font-size: 30px; line-height: 34px; }
+	/*header.primary { height: auto; background: transparent; border: none }*/
+	/*header.primary .icon { display: none }*/
+	/*header.primary hgroup { text-align: left; padding: 20px 20px 5px 20px }*/
+	/*header.primary hgroup h1 { position: relative; left: 0; right: auto; font-size: 30px; line-height: 34px; }*/
 
 	/*	Navigation
 	=========================== */
-	.navigation { max-width: 265px }
+	/*.navigation { max-width: 265px }*/
 
-}
+/*}*/
