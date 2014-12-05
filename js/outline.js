@@ -11,7 +11,8 @@ function clearOutline() {
 
 function insertInOutline(tuple) {
     // outline.push(tuple);
-
+    if (tuple.content === "") return;
+    
     if (outline.length === 0) {
         outline.push(tuple);
     } else {

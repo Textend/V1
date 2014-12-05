@@ -95,7 +95,9 @@
                     <p id="docContent" class="textention"></p>
                 </div>
                 <div id="outline">
-                    <p id="outlineContent" class="textention"></p>
+                    <p id="outlineContent" class="textention">
+                        <ul id="outlineContent"></ul>
+                    </p>
                 </div>
             </section>
         </div>
@@ -137,9 +139,9 @@
                     </div>
                     <div class="modal-body">
                         font size
-                        <select>
+                        <select id="fontSizeSelect">
                             <option value="10">10</option>
-                            <option value="15">15</option>
+                            <option value="15" selected="selected">15</option>
                             <option value="20">20</option>
                             <option value="25">25</option>
                             <option value="30">30</option>
@@ -147,7 +149,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" style="float: left" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" style="float: right" data-dismiss="modal">Save settings</button>
+                        <button type="button" class="btn btn-primary" style="float: right" data-dismiss="modal" id="saveSettingsBtn">Save settings</button>
                     </div>
                 </div>
             </div>

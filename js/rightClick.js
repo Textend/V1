@@ -8,14 +8,37 @@ function getSelectedText() {
     return text;
 }
 
-var outlineNumber = 0;
+
+function getParentElement() {
+    var parentEl = null, sel;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.rangeCount) {
+            parentEl = sel.getRangeAt(0).startContainer;
+            if (parentEl.nodeType != 1) {
+                parentEl = parentEl.parentNode;
+            }
+        }
+    } else if ((sel = document.selection) && sel.type != "Control") {
+        parentEl = sel.createRange().startContainer;
+        if (parentEl.nodeType != 1) {
+            parentEl = parentEl.parentNode;
+        }
+    }
+    return parentEl;
+}
+
+
 
 function addToOutline() {
     // alert("Adding \"" + getSelectedText() + "\" to outline");
     var outlineText = getSelectedText();
+    var parentEl = getParentElement();
+    var id = parentEl.id.substring(9);
+
     console.log(outlineText)
     
-    insertInOutline(new Tuple(outlineNumber++, outlineText));
+    insertInOutline(new Tuple(id, outlineText));
     // $("#outlineContent").text(outlineText);
     //alert(outlineText);
 }
